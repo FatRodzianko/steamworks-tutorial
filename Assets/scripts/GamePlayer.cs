@@ -103,7 +103,6 @@ public class GamePlayer : NetworkBehaviour
     {
         if (hasAuthority)
         {
-            //SteamMatchmaking.LeaveLobby((CSteamID)LobbyManager.instance.currentLobbyId);
             if (IsGameLeader)
             {
                 Game.StopHost();
@@ -112,8 +111,6 @@ public class GamePlayer : NetworkBehaviour
             {
                 Game.StopClient();
             }
-            
-            //Destroy(this.gameObject);
         }
     }
     private void OnDestroy()

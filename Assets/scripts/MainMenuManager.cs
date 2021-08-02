@@ -83,12 +83,6 @@ public class MainMenuManager : MonoBehaviour
         buttons.SetActive(false);
         LobbyListCanvas.SetActive(true);
 
-        /*if (lobbyIDS.Count > 0)
-            lobbyIDS.Clear();
-
-        SteamMatchmaking.AddRequestLobbyListFilterSlotsAvailable(1);
-
-        SteamAPICall_t try_getList = SteamMatchmaking.RequestLobbyList();*/
         SteamLobby.instance.GetListOfLobbies();
     }
     public void DisplayLobbies(List<CSteamID> lobbyIDS, LobbyDataUpdate_t result)
@@ -102,7 +96,7 @@ public class MainMenuManager : MonoBehaviour
                 if (didPlayerSearchForLobbies)
                 {
                     Debug.Log("OnGetLobbyInfo: Player searched for lobbies");
-                    if (SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name").ToLower().Contains(searchBox.text))
+                    if (SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name").ToLower().Contains(searchBox.text.ToLower()))
                     {
                         GameObject newLobbyListItem = Instantiate(LobbyListItemPrefab) as GameObject;
                         LobbyListItem newLobbyListItemScript = newLobbyListItem.GetComponent<LobbyListItem>();
@@ -143,7 +137,6 @@ public class MainMenuManager : MonoBehaviour
         }
         if (didPlayerSearchForLobbies)
             didPlayerSearchForLobbies = false;
-        //LobbyListScrollRect.GetComponent<ScrollRect>().verticalNormalizedPosition = 1f;
     }
     public void DestroyOldLobbyListItems()
     {
