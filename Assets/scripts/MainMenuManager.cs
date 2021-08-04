@@ -101,6 +101,7 @@ public class MainMenuManager : MonoBehaviour
                         GameObject newLobbyListItem = Instantiate(LobbyListItemPrefab) as GameObject;
                         LobbyListItem newLobbyListItemScript = newLobbyListItem.GetComponent<LobbyListItem>();
 
+                        newLobbyListItemScript.lobbySteamId = (CSteamID)lobbyIDS[i].m_SteamID;
                         newLobbyListItemScript.lobbyName = SteamMatchmaking.GetLobbyData((CSteamID)lobbyIDS[i].m_SteamID, "name");
                         newLobbyListItemScript.numberOfPlayers = SteamMatchmaking.GetNumLobbyMembers((CSteamID)lobbyIDS[i].m_SteamID);
                         newLobbyListItemScript.maxNumberOfPlayers = SteamMatchmaking.GetLobbyMemberLimit((CSteamID)lobbyIDS[i].m_SteamID);
