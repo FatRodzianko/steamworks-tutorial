@@ -16,6 +16,7 @@ public class GamePlayer : NetworkBehaviour
     [Header("Game Info")]
     [SyncVar] public bool IsGameLeader = false;
     [SyncVar(hook = nameof(HandlePlayerReadyStatusChange))] public bool isPlayerReady;
+    [SyncVar] public ulong playerSteamId;
 
     private MyNetworkManager game;
     private MyNetworkManager Game

@@ -91,6 +91,7 @@ public class LobbyManager : MonoBehaviour
             newPlayerListItemScript.playerName = player.playerName;
             newPlayerListItemScript.ConnectionId = player.ConnectionId;
             newPlayerListItemScript.isPlayerReady = player.isPlayerReady;
+            newPlayerListItemScript.playerSteamId = player.playerSteamId;
             newPlayerListItemScript.SetPlayerListItemValues();
 
 
@@ -115,6 +116,7 @@ public class LobbyManager : MonoBehaviour
                 newPlayerListItemScript.playerName = player.playerName;
                 newPlayerListItemScript.ConnectionId = player.ConnectionId;
                 newPlayerListItemScript.isPlayerReady = player.isPlayerReady;
+                newPlayerListItemScript.playerSteamId = player.playerSteamId;
                 newPlayerListItemScript.SetPlayerListItemValues();
 
 
